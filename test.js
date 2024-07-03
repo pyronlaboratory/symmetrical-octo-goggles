@@ -1,22 +1,20 @@
 /**
- * @description Performs a binary search for an element `x` in an array `arr`. It
- * compares the value of `x` with the middle element of the array, and recursively
- * calls itself if the comparison yields false. If the comparison is true, the function
- * returns `true`.
+ * @description Takes an array, a target value, and two indices representing the start
+ * and end points of the search range. It returns `true` if the target value is found
+ * within the range, or `false` otherwise.
  * 
- * @param {array} arr - array that the function is searching for the specified value
- * `x`.
+ * @param {array} arr - 1D array to be searched for the target element `x`.
  * 
- * @param {number} x - value being searched for in the array.
+ * @param {number} x - searched value in the array.
  * 
- * @param {integer} start - index of the left side of the interval where the searched
- * value is located.
+ * @param {integer} start - index of the left-most element that should be searched
+ * within the array for the specified value `x`.
  * 
- * @param {integer} end - 2nd index of the array where the given value `x` should be
- * searched starting from the `start` index.
+ * @param {integer} end - 2nd point of the range for searching the desired element
+ * in the array.
  * 
  * @returns {boolean} a boolean value indicating whether the specified element exists
- * within the given range of an array.
+ * in the array between the start and end indices.
  */
 const searching = (arr, x, start, end) => {
   if (start > end) return false;
@@ -31,10 +29,10 @@ const searching = (arr, x, start, end) => {
 
 
 /**
- * @description Retrieves the application ID based on provided parameters and logs
- * the result to the pipeline.
+ * @description Retrieves and returns an application ID based on input parameters.
+ * It uses the `gs.log()` method to log messages related to the function's execution.
  * 
- * @returns {string} a unique identifier for a business application.
+ * @returns {integer} a unique identifier for an application.
  */
 const getApplicationID = () => {
   var appID = "";
@@ -48,16 +46,14 @@ const getApplicationID = () => {
 }
 
 /**
- * @description Takes an array of cell states as input, generates a new generation
- * of cells based on the Cellular Automata rules, and returns the new generation as
- * an array of cell states.
+ * @description Generates a new generation of cells based on the current state of the
+ * cells, using a simple algorithm that takes into account the neighbors of each cell
+ * and whether they are alive or not.
  * 
- * @param {array} cells - 2D grid of living and dead cells, which is used to generate
- * the next generation of cells through a process of iterative neighborhood counting
- * and alive/dead determination.
+ * @param {array} cells - 2D array of cells to be generated into the next generation.
  * 
- * @returns {array} an array of alive cells in the next generation, generated based
- * on the input cells.
+ * @returns {array} a new generation of cells, represented as an array of integers
+ * indicating whether each cell is alive or dead.
  */
 function newGeneration(cells) {
   const nextGeneration = []
