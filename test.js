@@ -1,19 +1,20 @@
 /**
- * @description Checks if an element exists within a sorted array. It does so by
- * determining if the middle element is equal to the given `x`, and if not, it
- * recursively calls itself on the left and right subarrays.
+ * @description Determines if an element exists within a given range in an array. It
+ * does this by dividing the range into two sub-ranges and then recursively searching
+ * for the element within each sub-range.
  * 
- * @param {array} arr - array to be searched for the specified value `x`.
+ * @param {array} arr - array that contains the values to be searched for the given
+ * `x`.
  * 
- * @param {number} x - value being searched for in the array.
+ * @param {integer} x - value being searched for in the array.
  * 
- * @param {number} start - index of the array where the search should start.
+ * @param {integer} start - index of the leftmost element in the array that the
+ * function will search for the specified `x` value.
  * 
- * @param {number} end - 2nd index of the array that the function searches for the
- * specified value `x`.
+ * @param {integer} end - 2nd index of the array where the element of interest is located.
  * 
- * @returns {boolean} a boolean value indicating whether the element `x` is present
- * in the array `arr` between `start` and `end`.
+ * @returns {boolean} a boolean value indicating whether the specified element exists
+ * in the given array within the specified range.
  */
 const searching = (arr, x, start, end) => {
   if (start > end) return false;
@@ -28,10 +29,10 @@ const searching = (arr, x, start, end) => {
 
 
 /**
- * @description Retrieves and returns the application ID based on the input parameters.
- * If the app name is not provided, it uses the default value from the GlideRecord.
+ * @description Retrieves and returns the application ID based on provided parameters
+ * and database queries.
  * 
- * @returns {string} a string representing the ID of the specified application.
+ * @returns {integer} a unique identifier for the specified application.
  */
 const getApplicationID = () => {
   var appID = "";
@@ -45,15 +46,17 @@ const getApplicationID = () => {
 }
 
 /**
- * @description Generates a new population of cells based on the current generation,
- * using a neighborhood-based algorithm that considers the neighbors' states to
- * determine each cell's fate.
+ * @description Takes an array of integers representing a 2D grid, where each integer
+ * represents the alive status of a cell in the grid. It returns an array of integers
+ * representing the next generation of cells, with alive cells having a value of 1
+ * and dead cells having a value of 0.
  * 
- * @param {array} cells - 2D grid of cells to be evolved, with each cell value
- * representing whether it is alive or dead.
+ * @param {array} cells - 2D grid of cells, where each cell can be in one of two
+ * states (alive or dead), and the function generates the next generation of cells
+ * based on the current state of the grid.
  * 
- * @returns {array} a new generation of cells, represented as a two-dimensional array
- * of alive or dead cells.
+ * @returns {array} a new generation of cells, represented as an array of booleans
+ * indicating whether each cell is alive or not.
  */
 function newGeneration(cells) {
   const nextGeneration = []
