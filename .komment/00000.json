@@ -1,0 +1,58 @@
+[
+  {
+    "name": "test.py",
+    "path": "test.py",
+    "content": {
+      "structured": {
+        "description": "Two functions: `Representational` and `calculate`. The `Representational` function takes three color channels (red, green, and blue) as input and returns a value based on their intensity. The `calculate` function takes an image as input and applies the `Representational` function to each pixel to obtain a new set of values. The main function reads two images, calculates the difference between them using the `calculate` function, and computes the peak signal-to-noise ratio (PSNR) for the difference using the formula `10 * log10(error / (255 * 255))`.",
+        "items": [
+          {
+            "id": "3ce0e3ce-6e08-429b-8648-76c59d23bd59",
+            "ancestors": [],
+            "description": "Takes an image as input and splits its RGB channels into separate components (red, green, blue). It then returns a representation of the image's pixel values as a Representational object.",
+            "params": [
+              {
+                "name": "img",
+                "type_name": "cv2Image",
+                "description": "Passed to the split() method to separate its RGB channels into individual integers, which are then used to create a Representational object."
+              }
+            ],
+            "returns": {
+              "type_name": "Representational",
+              "description": "A combination of red, green and blue pixel values from an input image."
+            },
+            "name": "calculate",
+            "location": {
+              "start": 12,
+              "insert": 13,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 4,
+            "docLength": null
+          },
+          {
+            "id": "c8a0cc40-e475-45b2-cb41-f40f1b7aa7de",
+            "ancestors": [],
+            "description": "Performs image comparison by calculating the difference between two images, computing the PSNR (Peak Signal-to-Noise Ratio) and printing the result.",
+            "params": [],
+            "returns": null,
+            "name": "main",
+            "location": {
+              "start": 18,
+              "insert": 20,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 17,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
